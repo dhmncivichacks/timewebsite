@@ -56,8 +56,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 1. Log in to Github
 1. Visit https://github.com/dhmncivichacks/timewebsite
 1. Click the word "Fork" in the upper right of this page. This makes a copy of the source code under your user account with Github.
-1. Visit your forked copy at `https://github.com/<YOUR GITHUB USERNAME>/timewebsite`
-1. Click the small icon of a clipboard to copy the url to your clipboard.
 
 #### From your command prompt:
 
