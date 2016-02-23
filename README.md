@@ -40,7 +40,7 @@ This community web site project encourages participation and contribution no mat
 
 #### Setup tools on Linux (Ubuntu 14.04.4 LTS):
 1. Install Python 3.5.1
-1. pip install virtualenvwrapper
+1. `pip install virtualenvwrapper`
 1. Add to your .bashrc or equivalent
 ```
 export WORKON_HOME=$HOME/venv
