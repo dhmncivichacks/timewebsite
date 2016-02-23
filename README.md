@@ -61,41 +61,41 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 #### From your command prompt:
 
-- "Make a directory" for storing your source code:
+1. "Make a directory" for storing your source code:
 
   `mkdir src`
 
-- "Change directory" into your source code directory:
+1. "Change directory" into your source code directory:
 
   `cd src`
 
-- Download your forked copy to your source code directory:
+1. Download your forked copy to your source code directory:
 
   `git clone git@github.com:<YOUR GITHUB USERNAME>/timewebsite.git`
 
-- "Change directory" into the project:
+1. "Change directory" into the project:
 
   `cd timewebsite`
 
-- Create a Python virtualenv to run the project within.
+1. Create a Python virtualenv to run the project within.
 
   `mkvirtualenv timewebsite`
 
   When you return to work on the project again, you will need to re-activate the same virtualenv. This is done by running `workon timewebsite` before attempting to run the project.
 
-- Install all the Python packages the project uses.
+1. Install all the Python packages the project uses.
 
   `pip install -r requirements.txt`
 
-- Create the local sqlite development database (one time):
+1. Create the local sqlite development database (one time):
 
   `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///posts.db" python db_create.py`
 
-- Create the test users (one time):
+1. Create the test users (one time):
 
   `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///posts.db" python db_create_users.py`
 
-- Run the application!
+1. Run the application!
 
   `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///posts.db" python run.py`
 
