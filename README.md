@@ -53,6 +53,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 #### Fork the repository
 
+1. Create an account on Github and add your SSH keys. These are used to authenticate your git commands with Github. Github has nice documentation on this step.
 1. Log in to Github
 1. Visit https://github.com/dhmncivichacks/timewebsite
 1. Click the word "Fork" in the upper right of this page. This makes a copy of the source code under your user account with Github.
