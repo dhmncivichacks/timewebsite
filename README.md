@@ -19,7 +19,7 @@ Alpha website, NE Wisc creatives / TIME community (tech, innovators, makers, ent
 
 This community web site project encourages participation and contribution no matter your experience level with web development. If you have a question, need some help, or want to participate some other way, open an [issue](https://github.com/dhmncivichacks/timewebsite/issues) and ask away! If you know you way around web development, look for something that needs fixing, fix it and open a [pull request](https://github.com/dhmncivichacks/timewebsite/pulls)!
 
-As a learning-friendly endeavor, the project is based on the learnings acquired from follwing this excellent tutorial series of Youtube videos: https://github.com/realpython/discover-flask
+As a learning-friendly endeavor, the project is based on the learnings acquired from following this excellent tutorial series of Youtube videos: https://github.com/realpython/discover-flask
 
 ## Development Tools:
 - [Atom](https://atom.io/) editor + [linter-flake8](https://atom.io/packages/linter-flake8) Atom package (or the editor of your choice)
