@@ -1,8 +1,5 @@
-#################
-#### imports ####
-#################
-
-from flask import flash, redirect, render_template, request, \
+# imports
+from flask import redirect, render_template, request, \
     url_for, Blueprint   # pragma: no cover
 from flask.ext.login import login_user, \
     login_required, logout_user   # pragma: no cover
@@ -11,20 +8,15 @@ from .forms import LoginForm, RegisterForm   # pragma: no cover
 from project import db   # pragma: no cover
 from project.models import User, bcrypt   # pragma: no cover
 
-################
-#### config ####
-################
 
+# config
 users_blueprint = Blueprint(
     'users', __name__,
     template_folder='templates'
 )   # pragma: no cover
 
 
-################
-#### routes ####
-################
-
+# routes
 @users_blueprint.route('/login', methods=['GET', 'POST'])   # pragma: no cover
 def login():
     error = None
@@ -36,7 +28,6 @@ def login():
                 user.password, request.form['password']
             ):
                 login_user(user)
-                flash('You were logged in. Go Crazy.')
                 return redirect(url_for('home.home'))
 
             else:
@@ -48,8 +39,7 @@ def login():
 @login_required   # pragma: no cover
 def logout():
     logout_user()
-    flash('You were logged out.')
-    return redirect(url_for('home.welcome'))
+    return redirect(url_for('home.home'))
 
 
 @users_blueprint.route(
