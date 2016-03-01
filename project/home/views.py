@@ -2,8 +2,6 @@
 # imports
 from flask import render_template, Blueprint
 
-from flask import current_app
-
 from project import db   # pragma: no cover
 from project.models import Person   # pragma: no cover
 
@@ -21,6 +19,5 @@ home_blueprint = Blueprint(
 def home():
     error = None
     persons = db.session.query(Person).all()
-    current_app.logger.debug(persons)
     return render_template(
         'index.html', persons=persons, error=error)
