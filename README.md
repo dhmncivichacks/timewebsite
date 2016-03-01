@@ -34,7 +34,7 @@ As a learning-friendly endeavor, the project is based on the learnings acquired 
 1. Install [Python 3.5.1](https://docs.python.org/3/using/windows.html) (make sure you check `[x] Add to PATH!`)
 1. Open a "Command Prompt" (not Powershell)
 1. Ensure Python is working
-  - Type `python --Version` and press Enter. You should see a confimation that Python is working. If instead you see something like `'python' is not recognized...` repeat Step 1. making sure to check [x] Add to PATH`.
+  - Type `python --version` and press Enter. You should see a confirmation that Python is working. If instead you see something like `'python' is not recognized...` repeat Step 1. making sure to check [x] Add to PATH`.
 1. Type `pip install virtualenvwrapper-win`
 1. FIXME howto virtualenv on windows
 1. (Optional) Install [Atom](https://atom.io/) editor + [linter-flake8](https://atom.io/packages/linter-flake8) Atom package
