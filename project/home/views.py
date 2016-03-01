@@ -2,8 +2,10 @@
 # imports
 from flask import render_template, Blueprint
 
+from flask import current_app
+
 from project import db   # pragma: no cover
-from project.models import BlogPost   # pragma: no cover
+from project.models import Person   # pragma: no cover
 
 
 # config
@@ -18,6 +20,7 @@ home_blueprint = Blueprint(
 @home_blueprint.route('/', methods=['GET', 'POST'])   # pragma: no cover
 def home():
     error = None
-    posts = db.session.query(BlogPost).all()
+    persons = db.session.query(Person).all()
+    current_app.logger.debug(persons)
     return render_template(
-        'index.html', posts=posts, error=error)
+        'index.html', persons=persons, error=error)

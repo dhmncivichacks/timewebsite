@@ -5,5 +5,8 @@
 TODO
 This is where the homepage content will go. Templatize!!!
 -->
+{% for person in persons %}
+<strong>Name:</strong> {{ person.name }} </br>
+{% endfor %}
 
 {% endblock %}
