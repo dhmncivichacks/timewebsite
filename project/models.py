@@ -5,9 +5,23 @@ from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
 
 
+class Blog(db.Model):
+
+    __tablename__ = "blogs"
+
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String, nullable=False)
+
+    def __init__(self, title):
+        self.title = title
+
+    def __repr__(self):
+        return '<title - {}>'.format(self.title)
+
+
 class BlogPost(db.Model):
 
-    __tablename__ = "posts"
+    __tablename__ = "blogposts"
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, nullable=False)
@@ -21,6 +35,73 @@ class BlogPost(db.Model):
 
     def __repr__(self):
         return '<title {}'.format(self.title)
+
+
+class Event(db.Model):
+
+    __tablename__ = "events"
+
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String, nullable=False)
+
+    def __init__(self, title):
+        self.title = title
+
+    def __repr__(self):
+        return '<title - {}>'.format(self.title)
+
+
+class Person(db.Model):
+
+    __tablename__ = "persons"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, nullable=False)
+
+    def __init__(self, name):
+        self.name = name
+
+
+class Organization(db.Model):
+
+    __tablename__ = "organizations"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, nullable=False)
+
+    def __init__(self, name):
+        self.name = name
+
+    def __repr__(self):
+        return '<name - {}>'.format(self.name)
+
+
+class NewsItem(db.Model):
+
+    __tablename__ = "newsitems"
+
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String, nullable=False)
+
+    def __init__(self, title):
+        self.title = title
+
+    def __repr__(self):
+        return '<title - {}>'.format(self.title)
+
+
+class Sponsor(db.Model):
+
+    __tablename__ = "sponsors"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, nullable=False)
+
+    def __init__(self, name):
+        self.name = name
+
+    def __repr__(self):
+        return '<name - {}>'.format(self.name)
 
 
 class User(db.Model):
