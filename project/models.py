@@ -25,12 +25,12 @@ class BlogPost(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, nullable=False)
-    description = db.Column(db.String, nullable=False)
+    body = db.Column(db.String, nullable=False)
     author_id = db.Column(db.Integer, ForeignKey('users.id'))
 
-    def __init__(self, title, description, author_id):
+    def __init__(self, title, body, author_id):
         self.title = title
-        self.description = description
+        self.body = body
         self.author_id = author_id
 
     def __repr__(self):
