@@ -1,7 +1,6 @@
 *.pyc
 venv
 .DS_Store
-blog
 *.db
 coverage
 tag.py
