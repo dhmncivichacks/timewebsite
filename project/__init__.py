@@ -1,5 +1,5 @@
 # imports
-from flask import Flask
+from flask import Flask, abort
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.bcrypt import Bcrypt
 from flask.ext.login import LoginManager
@@ -11,13 +11,16 @@ bcrypt = Bcrypt(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 app.config.from_object(os.environ['APP_SETTINGS'])
+app.url_map.strict_slashes = False  # handle /foo and /foo/
 db = SQLAlchemy(app)
 
+from project.dynamic_routes.views import dynamic_routes_blueprint
 from project.users.views import users_blueprint
 from project.home.views import home_blueprint
 from project.blog.views import blog_blueprint
 
 # register our blueprints
+app.register_blueprint(dynamic_routes_blueprint)
 app.register_blueprint(users_blueprint)
 app.register_blueprint(home_blueprint)
 app.register_blueprint(blog_blueprint)

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+  <div class="person">
+    <h1 class="person-title">
+        {{ person.name }}
+    </h1>
+    <img src="https://robohash.org/{{ person.name }}.png" width=100px>
+    <p>{{ person.biography }}</p>
+  </div> <!-- event -->
+
+  <hr>
+
+</div> <!-- container -->
+
+{% endblock %}
