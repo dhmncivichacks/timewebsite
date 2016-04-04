@@ -93,10 +93,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 
   `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///posts.db" python db_create.py`
 
-1. Create the test users (one time):
-
-  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///posts.db" python db_create_users.py`
-
 1. Run the application!
 
   `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///posts.db" python run.py`
@@ -108,7 +104,7 @@ Try logging in with username `admin` password `admin`
 ## Unit tests and code coverage
 
 
-- Run the tests
+- Run the tests FIXME!!! These are broken since we have diverged from the [discover-flask tutorial](https://github.com/realpython/discover-flask) 
 
   `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///posts.db" python manage.py test`
 
