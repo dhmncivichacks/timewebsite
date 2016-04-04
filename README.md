@@ -17,7 +17,7 @@ Alpha website, NE Wisc creatives / TIME community (tech, innovators, makers, ent
 
 ```
 
-See [the wiki](https://github.com/mikeputnam/timewebsite/wiki) for more details of the intent of this project.
+See [the wiki](https://github.com/dhmncivichacks/timewebsite/wiki) for more details of the intent of this project.
 
 This community web site project encourages participation and contribution no matter your experience level with web development. If you have a question, need some help, or want to participate some other way, open an [issue](https://github.com/dhmncivichacks/timewebsite/issues) and ask away! If you know you way around web development, look for something that needs fixing, fix it and open a [pull request](https://github.com/dhmncivichacks/timewebsite/pulls)!
 
@@ -104,7 +104,7 @@ Try logging in with username `admin` password `admin`
 ## Unit tests and code coverage
 
 
-- Run the tests FIXME!!! These are broken since we have diverged from the [discover-flask tutorial](https://github.com/realpython/discover-flask) 
+- Run the tests FIXME!!! These are broken since we have diverged from the [discover-flask tutorial](https://github.com/realpython/discover-flask)
 
   `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///timewebsite.db" python manage.py test`
 
