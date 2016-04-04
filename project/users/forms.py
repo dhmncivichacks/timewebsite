@@ -13,6 +13,10 @@ class RegisterForm(Form):
         'username',
         validators=[DataRequired(), Length(min=3, max=25)]
     )
+    url_handle = TextField(
+        'url_handle',
+        validators=[DataRequired(), Length(min=3, max=256)]
+    )
     email = TextField(
         'email',
         validators=[DataRequired(), Email(message=None), Length(min=6, max=40)]
@@ -24,6 +28,7 @@ class RegisterForm(Form):
     confirm = PasswordField(
         'Repeat password',
         validators=[
-            DataRequired(), EqualTo('password', message='Passwords must match.')
+            DataRequired(),
+            EqualTo('password', message='Passwords must match.')
         ]
     )
