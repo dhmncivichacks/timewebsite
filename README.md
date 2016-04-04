@@ -91,11 +91,11 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 1. Create the local sqlite development database (one time):
 
-  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///posts.db" python db_create.py`
+  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///timewebsite.db" python db_create.py`
 
 1. Run the application!
 
-  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///posts.db" python run.py`
+  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///timewebsite.db" python run.py`
 
 Now you should be able to view the application in your browser at http://localhost:5000
 
@@ -106,8 +106,8 @@ Try logging in with username `admin` password `admin`
 
 - Run the tests FIXME!!! These are broken since we have diverged from the [discover-flask tutorial](https://github.com/realpython/discover-flask) 
 
-  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///posts.db" python manage.py test`
+  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///timewebsite.db" python manage.py test`
 
 - Run the test coverage report
 
-  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///posts.db" python manage.py cov`
+  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///timewebsite.db" python manage.py cov`
