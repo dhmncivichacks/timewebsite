@@ -11,9 +11,11 @@ class Blog(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, nullable=False)
+    url_handle = db.Column(db.String, nullable=False)
 
-    def __init__(self, title):
+    def __init__(self, title, url_handle):
         self.title = title
+        self.url_handle = url_handle
 
     def __repr__(self):
         return '<title - {}>'.format(self.title)
@@ -27,11 +29,13 @@ class BlogPost(db.Model):
     title = db.Column(db.String, nullable=False)
     body = db.Column(db.String, nullable=False)
     author_id = db.Column(db.Integer, ForeignKey('users.id'))
+    url_handle = db.Column(db.String, nullable=False)
 
-    def __init__(self, title, body, author_id):
+    def __init__(self, title, body, author_id, url_handle):
         self.title = title
         self.body = body
         self.author_id = author_id
+        self.url_handle = url_handle
 
     def __repr__(self):
         return '<title {}'.format(self.title)
@@ -43,9 +47,13 @@ class Event(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, nullable=False)
+    url_handle = db.Column(db.String, nullable=False)
+    description = db.Column(db.String, nullable=False)
 
-    def __init__(self, title):
+    def __init__(self, title, url_handle, description):
+        self.description = description
         self.title = title
+        self.url_handle = url_handle
 
     def __repr__(self):
         return '<title - {}>'.format(self.title)
@@ -57,9 +65,13 @@ class Person(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
+    url_handle = db.Column(db.String, nullable=False)
+    biography = db.Column(db.String, nullable=False)
 
-    def __init__(self, name):
+    def __init__(self, name, url_handle, biography):
         self.name = name
+        self.url_handle = url_handle
+        self.biography = biography
 
 
 class Organization(db.Model):
@@ -68,9 +80,13 @@ class Organization(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
+    url_handle = db.Column(db.String, nullable=False)
+    description = db.Column(db.String, nullable=False)
 
-    def __init__(self, name):
+    def __init__(self, name, description, url_handle):
         self.name = name
+        self.description = description
+        self.url_handle = url_handle
 
     def __repr__(self):
         return '<name - {}>'.format(self.name)
@@ -82,9 +98,11 @@ class NewsItem(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, nullable=False)
+    url_handle = db.Column(db.String, nullable=False)
 
-    def __init__(self, title):
+    def __init__(self, title, url_handle):
         self.title = title
+        self.url_handle = url_handle
 
     def __repr__(self):
         return '<title - {}>'.format(self.title)
@@ -96,9 +114,13 @@ class Sponsor(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
+    url_handle = db.Column(db.String, nullable=False)
+    description = db.Column(db.String, nullable=False)
 
-    def __init__(self, name):
+    def __init__(self, name, url_handle, description):
         self.name = name
+        self.description = description
+        self.url_handle = url_handle
 
     def __repr__(self):
         return '<name - {}>'.format(self.name)
@@ -113,11 +135,13 @@ class User(db.Model):
     email = db.Column(db.String, nullable=False)
     password = db.Column(db.String)
     posts = relationship("BlogPost", backref="author")
+    url_handle = db.Column(db.String, nullable=False)
 
-    def __init__(self, name, email, password):
+    def __init__(self, name, email, password, url_handle):
         self.name = name
         self.email = email
         self.password = bcrypt.generate_password_hash(password)
+        self.url_handle = url_handle
 
     def is_authenticated(self):
         return True

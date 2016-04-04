@@ -12,8 +12,8 @@ blog_blueprint = Blueprint(
     template_folder='templates'
 )   # pragma: no cover
 
+
 # routes
-# use decorators to link the function to a url
 @blog_blueprint.route('/blog', methods=['GET', 'POST'])   # pragma: no cover
 def blog():
     error = None
