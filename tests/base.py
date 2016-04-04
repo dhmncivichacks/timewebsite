@@ -13,9 +13,22 @@ class BaseTestCase(TestCase):
 
     def setUp(self):
         db.create_all()
-        db.session.add(User("admin", "ad@min.com", "admin"))
         db.session.add(
-            BlogPost("Test post", "This is a test. Only a test.", "admin"))
+            User(
+                "admin",
+                "ad@min.com",
+                "admin",
+                url_handle="adminy"
+            )
+        )
+        db.session.add(
+            BlogPost(
+                "Test post",
+                "This is a test. Only a test.",
+                "admin",
+                url_handle="test_blog_post"
+            )
+        )
         db.session.commit()
 
     def tearDown(self):

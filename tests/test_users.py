@@ -14,24 +14,24 @@ from project.models import User
 class TestUser(BaseTestCase):
 
     # Ensure user can register
-    def test_user_registeration(self):
+    def test_user_registration(self):
         with self.client:
             response = self.client.post('register/', data=dict(
                 username='Michael', email='michael@realpython.com',
-                password='python', confirm='python'
+                password='python', confirm='python', url_handle="michael"
             ), follow_redirects=True)
-            self.assertIn(b'Welcome to Flask!', response.data)
+            self.assertIn(b'Hi, Michael!', response.data)
             self.assertTrue(current_user.name == "Michael")
             self.assertTrue(current_user.is_active())
             user = User.query.filter_by(email='michael@realpython.com').first()
             self.assertTrue(str(user) == '<name - Michael>')
 
     # Ensure errors are thrown during an incorrect user registration
-    def test_incorrect_user_registeration(self):
+    def test_incorrect_user_registration(self):
         with self.client:
             response = self.client.post('register/', data=dict(
                 username='Michael', email='michael',
-                password='python', confirm='python'
+                password='python', confirm='python', url_handle="michael"
             ), follow_redirects=True)
             self.assertIn(b'Invalid email address.', response.data)
             self.assertIn('/register/', request.url)
@@ -57,7 +57,7 @@ class UserViewsTests(BaseTestCase):
     # Ensure that the login page loads correctly
     def test_login_page_loads(self):
         response = self.client.get('/login')
-        self.assertIn(b'Please login', response.data)
+        self.assertIn(b'<input id="username" name="username"', response.data)
 
     # Ensure login behaves correctly with correct credentials
     def test_correct_login(self):
@@ -67,7 +67,7 @@ class UserViewsTests(BaseTestCase):
                 data=dict(username="admin", password="admin"),
                 follow_redirects=True
             )
-            self.assertIn(b'You were logged in', response.data)
+            self.assertIn(b'Hi, admin!', response.data)
             self.assertTrue(current_user.name == "admin")
             self.assertTrue(current_user.is_active())
 
@@ -89,13 +89,13 @@ class UserViewsTests(BaseTestCase):
                 follow_redirects=True
             )
             response = self.client.get('/logout', follow_redirects=True)
-            self.assertIn(b'You were logged out', response.data)
+            self.assertIn(b'<a href="/register"', response.data)
             self.assertFalse(current_user.is_active())
 
     # Ensure that logout page requires user login
     def test_logout_route_requires_login(self):
         response = self.client.get('/logout', follow_redirects=True)
-        self.assertIn(b'Please log in to access this page', response.data)
+        self.assertIn(b'Please log in to access this page.', response.data)
 
 
 if __name__ == '__main__':

@@ -50,7 +50,8 @@ def register():
         user = User(
             name=form.username.data,
             email=form.email.data,
-            password=form.password.data
+            password=form.password.data,
+            url_handle=form.url_handle.data
         )
         db.session.add(user)
         db.session.commit()
