@@ -17,6 +17,8 @@ Alpha website, NE Wisc creatives / TIME community (tech, innovators, makers, ent
 
 ```
 
+See [the wiki](https://github.com/mikeputnam/timewebsite/wiki) for more details of the intent of this project.
+
 This community web site project encourages participation and contribution no matter your experience level with web development. If you have a question, need some help, or want to participate some other way, open an [issue](https://github.com/dhmncivichacks/timewebsite/issues) and ask away! If you know you way around web development, look for something that needs fixing, fix it and open a [pull request](https://github.com/dhmncivichacks/timewebsite/pulls)!
 
 As a learning-friendly endeavor, the project is based on the learnings acquired from following this excellent tutorial series of Youtube videos: https://github.com/realpython/discover-flask
