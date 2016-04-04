@@ -17,6 +17,8 @@ Alpha website, NE Wisc creatives / TIME community (tech, innovators, makers, ent
 
 ```
 
+See [the wiki](https://github.com/mikeputnam/timewebsite/wiki) for more details of the intent of this project.
+
 This community web site project encourages participation and contribution no matter your experience level with web development. If you have a question, need some help, or want to participate some other way, open an [issue](https://github.com/dhmncivichacks/timewebsite/issues) and ask away! If you know you way around web development, look for something that needs fixing, fix it and open a [pull request](https://github.com/dhmncivichacks/timewebsite/pulls)!
 
 As a learning-friendly endeavor, the project is based on the learnings acquired from following this excellent tutorial series of Youtube videos: https://github.com/realpython/discover-flask
@@ -89,15 +91,11 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 1. Create the local sqlite development database (one time):
 
-  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///posts.db" python db_create.py`
-
-1. Create the test users (one time):
-
-  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///posts.db" python db_create_users.py`
+  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///timewebsite.db" python db_create.py`
 
 1. Run the application!
 
-  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///posts.db" python run.py`
+  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///timewebsite.db" python run.py`
 
 Now you should be able to view the application in your browser at http://localhost:5000
 
@@ -106,10 +104,10 @@ Try logging in with username `admin` password `admin`
 ## Unit tests and code coverage
 
 
-- Run the tests
+- Run the tests FIXME!!! These are broken since we have diverged from the [discover-flask tutorial](https://github.com/realpython/discover-flask) 
 
-  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///posts.db" python manage.py test`
+  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///timewebsite.db" python manage.py test`
 
 - Run the test coverage report
 
-  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///posts.db" python manage.py cov`
+  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///timewebsite.db" python manage.py cov`
