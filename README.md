@@ -104,10 +104,10 @@ Try logging in with username `admin` password `admin`
 ## Unit tests and code coverage
 
 
-- Run the tests FIXME!!! These are broken since we have diverged from the [discover-flask tutorial](https://github.com/realpython/discover-flask)
+- Run the tests
 
-  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///timewebsite.db" python manage.py test`
+  `APP_SETTINGS="config.TestConfig" DATABASE_URL="sqlite:///timewebsite.db" python manage.py test`
 
 - Run the test coverage report
 
-  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///timewebsite.db" python manage.py cov`
+  `APP_SETTINGS="config.TestConfig" DATABASE_URL="sqlite:///timewebsite.db" python manage.py cov`
