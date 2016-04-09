@@ -1,4 +1,4 @@
-# timewebsite
+# timewebsite [![Build Status](https://travis-ci.org/dhmncivichacks/timewebsite.svg?branch=master)](https://travis-ci.org/dhmncivichacks/timewebsite)
 Alpha website, NE Wisc creatives / TIME community (tech, innovators, makers, entrepreneurs)
 
 ```
