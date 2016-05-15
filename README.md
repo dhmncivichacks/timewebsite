@@ -68,9 +68,9 @@ As a learning-friendly endeavor, the project is based on the learnings acquired 
 
 1. Find the IP address assigned to the running docker container
 
-  `docker inspect -f 'http://{{ .NetworkSettings.Networks.timewebsite_default.IPAddress}}' timewebsite_web_1`
+  `docker inspect -f 'http://{{ .NetworkSettings.Networks.timewebsite_default.IPAddress}}:5000' timewebsite_web_1`
 
-Now you should be able to view the application in your browser using the IP address just discovered! `http://IPADDRESS:5000`
+Now you should be able to view the application in your browser using the IP address just discovered!
 
 Try logging in with username `admin` password `admin`
 
