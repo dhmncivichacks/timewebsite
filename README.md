@@ -23,33 +23,11 @@ This community web site project encourages participation and contribution no mat
 
 As a learning-friendly endeavor, the project is based on the learnings acquired from following this excellent tutorial series of Youtube videos: https://github.com/realpython/discover-flask
 
-## Development Tools:
-- [Atom](https://atom.io/) editor + [linter-flake8](https://atom.io/packages/linter-flake8) Atom package (or the editor of your choice)
-- [git](https://git-scm.com/) and an account here on Github.
-- [Python 3.5.1](https://www.python.org/)
-- [virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/)
+## Prerequisites:
 
-#### Setup tools on Mac OSX:
-1. FIXME
-
-#### Setup tools on Windows:
-1. Install [Python 3.5.1](https://docs.python.org/3/using/windows.html) (make sure you check `[x] Add to PATH!`)
-1. Open a "Command Prompt" (not Powershell)
-1. Ensure Python is working
-  - Type `python --version` and press Enter. You should see a confirmation that Python is working. If instead you see something like `'python' is not recognized...` repeat Step 1. making sure to check [x] Add to PATH`.
-1. Type `pip install virtualenvwrapper-win`
-1. FIXME howto virtualenv on windows
-1. (Optional) Install [Atom](https://atom.io/) editor + [linter-flake8](https://atom.io/packages/linter-flake8) Atom package
-
-#### Setup tools on Linux (Ubuntu 14.04.4 LTS):
-1. Install Python 3.5.1
-1. `pip install virtualenvwrapper`
-1. Add to your .bashrc or equivalent
-```
-export WORKON_HOME=$HOME/venv
-VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3' # This needs to be placed before the virtualenvwrapper command
-source /usr/local/bin/virtualenvwrapper.sh
-```
+#### On Linux, \*BSD, Mac OS X, and Windows:
+1. Install [Docker Engine](https://docs.docker.com/engine/installation/)
+1. Install [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 1. (Optional) Install [Atom](https://atom.io/) editor + [linter-flake8](https://atom.io/packages/linter-flake8) Atom package
 
 ## Setup the project on your computer
@@ -79,25 +57,19 @@ source /usr/local/bin/virtualenvwrapper.sh
 
   `cd timewebsite`
 
-1. Create a Python virtualenv to run the project within.
+1. Build/Run the docker container
 
-  `mkvirtualenv timewebsite`
-
-  When you return to work on the project again, you will need to re-activate the same virtualenv. This is done by running `workon timewebsite` before attempting to run the project.
-
-1. Install all the Python packages the project uses.
-
-  `pip install -r requirements.txt`
+  `docker-compose up`
 
 1. Create the local sqlite development database (one time):
 
-  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///timewebsite.db" python db_create.py`
+  `docker exec -it timewebsite_web_1 /bin/bash -c "APP_SETTINGS='config.DevelopmentConfig' DATABASE_URL='sqlite:///timewebsite.db' python db_create.py"`
 
-1. Run the application!
+1. Find the IP address of the running docker container
 
-  `APP_SETTINGS="config.DevelopmentConfig" DATABASE_URL="sqlite:///timewebsite.db" python run.py`
+  `docker inspect -f '{{ .NetworkSettings.Networks.timewebsite_default.IPAddress }}' timewebsite_web_1`
 
-Now you should be able to view the application in your browser at http://localhost:5000
+Now you should be able to view the application in your browser using the IP address you just discovered. `http://IPADDRESS:5000`
 
 Try logging in with username `admin` password `admin`
 
@@ -106,8 +78,8 @@ Try logging in with username `admin` password `admin`
 
 - Run the tests
 
-  `APP_SETTINGS="config.TestConfig" DATABASE_URL="sqlite:///timewebsite.db" python manage.py test`
+  `docker exec -it timewebsite_web_1 /bin/bash -c "APP_SETTINGS='config.TestConfig' DATABASE_URL='sqlite:///timewebsite.db' python manage.py test`
 
 - Run the test coverage report
 
-  `APP_SETTINGS="config.TestConfig" DATABASE_URL="sqlite:///timewebsite.db" python manage.py cov`
+  `docker exec -it timewebsite_web_1 /bin/bash -c "APP_SETTINGS='config.TestConfig' DATABASE_URL='sqlite:///timewebsite.db' python manage.py cov`
