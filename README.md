@@ -27,6 +27,7 @@ As a learning-friendly endeavor, the project is based on the learnings acquired 
 
 #### On Linux, \*BSD, Mac OS X, and Windows:
 1. Install [Docker Engine](https://docs.docker.com/engine/installation/)
+1. (If Linux or \*BSD) Install [Docker Compose](https://docs.docker.com/compose/install/)
 1. Install [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 1. (Optional) Install [Atom](https://atom.io/) editor + [linter-flake8](https://atom.io/packages/linter-flake8) Atom package
 
@@ -63,13 +64,13 @@ As a learning-friendly endeavor, the project is based on the learnings acquired 
 
 1. Create the local sqlite development database (one time):
 
-  `docker exec -it timewebsite_web_1 /bin/bash -c "APP_SETTINGS='config.DevelopmentConfig' DATABASE_URL='sqlite:///timewebsite.db' python db_create.py"`
+  `docker-compose exec web python db_create.py"`
 
-1. Find the IP address of the running docker container
+1. Find the IP address assigned to the running docker container
 
-  `docker inspect -f '{{ .NetworkSettings.Networks.timewebsite_default.IPAddress }}' timewebsite_web_1`
+  `docker inspect -f 'http://{{ .NetworkSettings.Networks.timewebsite_default.IPAddress}}' timewebsite_web_1`
 
-Now you should be able to view the application in your browser using the IP address you just discovered. `http://IPADDRESS:5000`
+Now you should be able to view the application in your browser using the IP address just discovered! `http://IPADDRESS:5000`
 
 Try logging in with username `admin` password `admin`
 
@@ -78,8 +79,8 @@ Try logging in with username `admin` password `admin`
 
 - Run the tests
 
-  `docker exec -it timewebsite_web_1 /bin/bash -c "APP_SETTINGS='config.TestConfig' DATABASE_URL='sqlite:///timewebsite.db' python manage.py test`
+  `docker-compose exec web python manage.py test`
 
 - Run the test coverage report
 
-  `docker exec -it timewebsite_web_1 /bin/bash -c "APP_SETTINGS='config.TestConfig' DATABASE_URL='sqlite:///timewebsite.db' python manage.py cov`
+  `docker-compose exec web python manage.py cov`
