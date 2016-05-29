@@ -1,4 +1,6 @@
-# timewebsite [![Build Status](https://travis-ci.org/dhmncivichacks/timewebsite.svg?branch=master)](https://travis-ci.org/dhmncivichacks/timewebsite) [![Coverage Status](https://coveralls.io/repos/github/dhmncivichacks/timewebsite/badge.svg?branch=master)](https://coveralls.io/github/dhmncivichacks/timewebsite?branch=master)
+# timewebsite
+[![Build Status](https://travis-ci.org/dhmncivichacks/timewebsite.svg?branch=master)](https://travis-ci.org/dhmncivichacks/timewebsite)
+[![Coverage Status](https://coveralls.io/repos/github/dhmncivichacks/timewebsite/badge.svg?branch=master)](https://coveralls.io/github/dhmncivichacks/timewebsite?branch=master)
 Alpha website, NE Wisc creatives / TIME community (tech, innovators, makers, entrepreneurs)
 
 ```
