@@ -1,16 +1,16 @@
 # imports
-from flask import request # pragma: no cover
-from flask import render_template # pragma: no cover
-from flask import Blueprint # pragma: no cover
-from flask import redirect # pragma: no cover
-from flask import url_for # pragma: no cover
+from flask import request  # pragma: no cover
+from flask import render_template  # pragma: no cover
+from flask import Blueprint  # pragma: no cover
+from flask import redirect  # pragma: no cover
+from flask import url_for  # pragma: no cover
 
-from flask.ext.login import current_user # pragma: no cover
+from flask.ext.login import current_user  # pragma: no cover
 
-from project import db   # pragma: no cover
-from project.models import BlogPost   # pragma: no cover
+from project import db  # pragma: no cover
+from project.models import BlogPost  # pragma: no cover
 
-from .forms import BlogPostForm # pragma: no cover
+from .forms import BlogPostForm  # pragma: no cover
 
 
 # config
@@ -21,7 +21,7 @@ blog_blueprint = Blueprint(
 
 
 # routes
-@blog_blueprint.route('/blog', methods=['GET', 'POST']) # pragma: no cover
+@blog_blueprint.route('/blog', methods=['GET', 'POST'])  # pragma: no cover
 def blog():
     error = None
     form = BlogPostForm(request.form)

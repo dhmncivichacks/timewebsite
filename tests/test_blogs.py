@@ -31,8 +31,8 @@ class TestBlog(BaseTestCase):
     def test_invalid_form_error(self):
         with self.client:
             response = self.client.post('blog/', data=dict(
-                title = None,
-                body = None
+                title=None,
+                body=None
             ), follow_redirects=True)
             self.assertIn(b'FIXME ERROR', response.data)
 
