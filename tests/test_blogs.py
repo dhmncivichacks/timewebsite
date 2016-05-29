@@ -7,7 +7,7 @@ from flask.ext.login import current_user
 class TestBlog(BaseTestCase):
 
     # Ensure that blog route was set up correctly
-    def test_index(self):
+    def test_blog_route(self):
         response = self.client.get('/blog', content_type='html/text')
         self.assertEqual(response.status_code, 200)
 
@@ -27,6 +27,14 @@ class TestBlog(BaseTestCase):
             self.assertTrue(current_user.name == "admin")
             self.assertTrue(current_user.is_active())
 
+    # Ensure invalid form conveys errors
+    def test_invalid_form_error(self):
+        with self.client:
+            response = self.client.post('blog/', data=dict(
+                title = None,
+                body = None
+            ), follow_redirects=True)
+            self.assertIn(b'FIXME ERROR', response.data)
 
 if __name__ == '__main__':
     unittest.main()
