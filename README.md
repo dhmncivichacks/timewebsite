@@ -74,7 +74,7 @@ Now you should be able to view the application in your browser using the IP addr
 
 Try logging in with username `admin` password `admin`
 
-## Unit tests and code coverage
+## Unit tests and test coverage
 
 
 - Run the tests
