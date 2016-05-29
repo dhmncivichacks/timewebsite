@@ -2,5 +2,6 @@
 venv
 .DS_Store
 *.db
+.coverage
 coverage
 tag.py
