@@ -1,6 +1,6 @@
 
 # imports
-from flask import render_template, Blueprint
+from flask import render_template, Blueprint   # pragma: no cover
 
 from project import db   # pragma: no cover
 from project.models import Person   # pragma: no cover
@@ -18,7 +18,7 @@ MAX_GRID_SIZE_HOMEPAGE_PEOPLE = 6
 
 # routes
 # use decorators to link the function to a url
-@home_blueprint.route('/', methods=['GET', 'POST'])   # pragma: no cover
+@home_blueprint.route('/', methods=['GET', 'POST'])
 def home():
     error = None
     current_person_count = db.session.query(Person).count()
