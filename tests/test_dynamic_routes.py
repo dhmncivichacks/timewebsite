@@ -51,7 +51,8 @@ class TestDynamicRoutes(BaseTestCase):
             Person(
                 name=sample_person,
                 url_handle=sample_person,
-                biography=sample_person
+                biography=sample_person,
+                added_by_id=1 # admin
             )
         )
         db.session.commit()
