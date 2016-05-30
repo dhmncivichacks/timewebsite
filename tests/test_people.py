@@ -6,12 +6,10 @@ from flask.ext.login import current_user
 
 class TestPeople(BaseTestCase):
 
-    # Ensure that blog route was set up correctly
     def test_people_route(self):
         response = self.client.get('/people', content_type='html/text')
         self.assertEqual(response.status_code, 200)
 
-    # Ensure that new posts can be made
     def test_add_person(self):
         with self.client:
             response = self.client.post(
@@ -25,12 +23,12 @@ class TestPeople(BaseTestCase):
             ), follow_redirects=True)
             self.assertIn(b'Somebody Somewhere', response.data)
 
-    # Ensure invalid form conveys errors
     def test_invalid_form_error(self):
         with self.client:
-            response = self.client.post('blog/', data=dict(
-                title=None,
-                body=None
+            response = self.client.post('people/', data=dict(
+                name=None,
+                biography=None,
+                url_handle=None
             ), follow_redirects=True)
             self.assertIn(b'FIXME ERROR', response.data)
 
