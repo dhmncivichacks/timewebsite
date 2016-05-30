@@ -17,7 +17,7 @@ users_blueprint = Blueprint(
 
 
 # routes
-@users_blueprint.route('/login', methods=['GET', 'POST'])   # pragma: no cover
+@users_blueprint.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
     form = LoginForm(request.form)
@@ -35,15 +35,15 @@ def login():
     return render_template('login.html', form=form, error=error)
 
 
-@users_blueprint.route('/logout')   # pragma: no cover
-@login_required   # pragma: no cover
+@users_blueprint.route('/logout')
+@login_required
 def logout():
     logout_user()
     return redirect(url_for('home.home'))
 
 
 @users_blueprint.route(
-    '/register/', methods=['GET', 'POST'])   # pragma: no cover
+    '/register/', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
     if form.validate_on_submit():

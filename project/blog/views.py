@@ -21,7 +21,7 @@ blog_blueprint = Blueprint(
 
 
 # routes
-@blog_blueprint.route('/blog', methods=['GET', 'POST'])  # pragma: no cover
+@blog_blueprint.route('/blog', methods=['GET', 'POST'])
 def blog():
     error = None
     form = BlogPostForm(request.form)
