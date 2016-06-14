@@ -86,3 +86,8 @@ Try logging in with username `admin` password `admin`
 - Run the test coverage report
 
   `docker-compose exec web python manage.py cov`
+
+- Run the linter(style-checker)
+
+  `docker-compose exec web flake8`
+
