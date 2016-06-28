@@ -66,7 +66,7 @@ As a learning-friendly endeavor, the project is based on the learnings acquired 
 
 1. Create the local sqlite development database (one time):
 
-  `docker-compose exec web python db_create.py"`
+  `docker-compose exec web python db_create.py`
 
 1. Find the IP address assigned to the running docker container
 
@@ -89,5 +89,5 @@ Try logging in with username `admin` password `admin`
 
 - Run the linter(style-checker)
 
-  `docker-compose exec web flake8`
+  `docker-compose exec web flake8 --ignore=E402`
 
