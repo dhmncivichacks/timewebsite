@@ -7,7 +7,7 @@
   {% if current_user.get_id() %}
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    New organization
+    New event 
   </button>
 
   <!-- Modal -->
@@ -16,26 +16,16 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">New organization</h4>
+          <h4 class="modal-title" id="myModalLabel">New event</h4>
         </div>
         <div class="modal-body">
           <form class="form-signin" role="form" method="post" action="">
             {{ form.csrf_token }}
             <p>
-              {{ form.name(placeholder="name") }}
+              {{ form.title(placeholder="title") }}
               <span class="error">
-                {% if form.name.errors %}
-                  {% for error in form.name.errors %}
-                    {{ error }}
-                  {% endfor %}
-                {% endif %}
-              </span>
-            </p>
-            <p>
-            {{ form.url_handle(placeholder="url_handle") }}
-              <span class="error">
-                {% if form.url_handle.errors %}
-                  {% for error in form.url_handle.errors %}
+                {% if form.title.errors %}
+                  {% for error in form.title.errors %}
                     {{ error }}
                   {% endfor %}
                 {% endif %}
@@ -66,16 +56,16 @@
 
 
   <div class="posts">
-    {% for organization in organizations %}
+    {% for e in events %}
     <div class="post">
       <h1 class="post-title">
-          {{ organization.name }}
+          {{ e.title }}
       </h1>
-      {{organization.description}}<br/>
-      {{organization.url_handle}}
-    </div> <!-- organization -->
+      {{e.description}}<br/>
+      {{e.url_handle}}
+    </div> <!-- post -->
     {% endfor %}
-  </div> <!-- organizations -->
+  </div> <!-- posts -->
 
   <hr>
 
