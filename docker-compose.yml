@@ -1,10 +1,23 @@
 version: '2'
 services:
+
+  database:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    restart: always
+    volumes:
+      - "./.data/database:/var/lib/postgresql"
+
   web:
     build: .
+    command: "python run.py"
+    depends_on:
+      - database
     environment:
       - APP_SETTINGS=config.DevelopmentConfig
-      - DATABASE_URL=sqlite:///timewebsite.db
+    links:
+      - database
+    restart: always
     volumes:
       - .:/usr/src/app
-    command: python run.py
