@@ -60,19 +60,11 @@ As a learning-friendly endeavor, the project is based on the learnings acquired 
 
   `cd timewebsite`
 
-1. Build/Run the docker container
+1. Run the handy reset.sh script
 
-  `docker-compose up`
+  `./reset.sh`
 
-1. Create the local sqlite development database (one time):
-
-  `docker-compose exec web python db_create.py`
-
-1. Find the IP address assigned to the running docker container
-
-  `docker inspect -f 'http://{{ .NetworkSettings.Networks.timewebsite_default.IPAddress}}:5000' timewebsite_web_1`
-
-Now you should be able to view the application in your browser using the IP address just discovered!
+Now you should be able to view the application in your browser using the URL printed at the end of the script run.
 
 Try logging in with username `admin` password `admin`
 

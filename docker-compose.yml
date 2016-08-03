@@ -9,7 +9,7 @@ services:
     volumes:
       - "./.data/database:/var/lib/postgresql"
 
-  webapp:
+  web:
     build: .
     command: "python run.py"
     depends_on:
