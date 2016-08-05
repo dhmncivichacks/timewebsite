@@ -1,0 +1,8 @@
+[report]
+exclude_lines = 
+    def __repr__
+    pragma: no cover
+    if __name__ == '__main__':
+
+[run]
+branch = True

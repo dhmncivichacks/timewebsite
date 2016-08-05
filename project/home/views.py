@@ -1,9 +1,9 @@
 
 # imports
-from flask import render_template, Blueprint   # pragma: no cover
+from flask import render_template, Blueprint
 
-from project import db   # pragma: no cover
-from project.models import Person   # pragma: no cover
+from project import db
+from project.models import Person
 
 import random
 
@@ -12,7 +12,7 @@ import random
 home_blueprint = Blueprint(
     'home', __name__,
     template_folder='templates'
-)   # pragma: no cover
+)
 MAX_GRID_SIZE_HOMEPAGE_PEOPLE = 6
 
 

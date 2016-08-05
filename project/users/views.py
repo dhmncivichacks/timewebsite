@@ -1,19 +1,19 @@
 # imports
 from flask import redirect, render_template, request, \
-    url_for, Blueprint   # pragma: no cover
+    url_for, Blueprint
 from flask.ext.login import login_user, \
-    login_required, logout_user   # pragma: no cover
+    login_required, logout_user
 
-from .forms import LoginForm, RegisterForm   # pragma: no cover
-from project import db   # pragma: no cover
-from project.models import User, bcrypt   # pragma: no cover
+from .forms import LoginForm, RegisterForm
+from project import db
+from project.models import User, bcrypt
 
 
 # config
 users_blueprint = Blueprint(
     'users', __name__,
     template_folder='templates'
-)   # pragma: no cover
+)
 
 
 # routes

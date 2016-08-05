@@ -1,13 +1,13 @@
-from flask import render_template, Blueprint, abort   # pragma: no cover
-from project.models import Event   # pragma: no cover
-from project.models import Organization   # pragma: no cover
-from project.models import Person   # pragma: no cover
+from flask import render_template, Blueprint, abort
+from project.models import Event
+from project.models import Organization
+from project.models import Person
 
 
 dynamic_routes_blueprint = Blueprint(
     'dynamic_routes', __name__,
     template_folder='templates'
-)   # pragma: no cover
+)
 
 
 # Dynamic router for nice urls example.com/billgates or example.com/barcampgb
