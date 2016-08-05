@@ -1,21 +1,21 @@
 # imports
-from flask import request  # pragma: no cover
-from flask import render_template  # pragma: no cover
-from flask import Blueprint  # pragma: no cover
-from flask import redirect  # pragma: no cover
-from flask import url_for  # pragma: no cover
+from flask import request
+from flask import render_template
+from flask import Blueprint
+from flask import redirect
+from flask import url_for
 
-from project import db  # pragma: no cover
-from project.models import Organization  # pragma: no cover
+from project import db
+from project.models import Organization
 
-from .forms import OrganizationForm  # pragma: no cover
+from .forms import OrganizationForm
 
 
 # config
 organizations_blueprint = Blueprint(
     'organizations', __name__,
     template_folder='templates'
-)   # pragma: no cover
+) 
 
 
 # routes

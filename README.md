@@ -75,9 +75,10 @@ Try logging in with username `admin` password `admin`
 
   `docker-compose exec web python manage.py test`
 
-- Run the test coverage report
+- Run the test coverage report (generates HTML files into coverage/ directory)
 
-  `docker-compose exec web python manage.py cov`
+  `docker-compose exec web coverage run -m unittest discover tests`
+  `docker-compose exec web coverage html -d coverage`
 
 - Run the linter(style-checker)
 
