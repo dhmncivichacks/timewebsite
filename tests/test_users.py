@@ -17,14 +17,13 @@ class TestUser(BaseTestCase):
     def test_user_registration(self):
         with self.client:
             response = self.client.post('register/', data=dict(
-                username='Michael', email='michael@realpython.com',
-                password='python', confirm='python', url_handle="michael"
+                name='Michael', email='michael@realpython.com',
+                password='python', confirm='python', url_handle="michael",
+                biography="biography here"
             ), follow_redirects=True)
-            self.assertIn(b'Hi, Michael!', response.data)
-            self.assertTrue(current_user.name == "Michael")
+            self.assertIn(b'Hi, michael!', response.data)
             self.assertTrue(current_user.is_active())
             user = User.query.filter_by(email='michael@realpython.com').first()
-            self.assertTrue(str(user) == '<name - Michael>')
 
     # Ensure errors are thrown during an incorrect user registration
     def test_incorrect_user_registration(self):
@@ -68,7 +67,6 @@ class UserViewsTests(BaseTestCase):
                 follow_redirects=True
             )
             self.assertIn(b'Hi, admin!', response.data)
-            self.assertTrue(current_user.name == "admin")
             self.assertTrue(current_user.is_active())
 
     # Ensure login behaves correctly with incorrect credentials

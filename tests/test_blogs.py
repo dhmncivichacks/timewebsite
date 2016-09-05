@@ -24,7 +24,6 @@ class TestBlog(BaseTestCase):
                 author=current_user.id, url_handle="a_post_about_something "
             ), follow_redirects=True)
             self.assertIn(b'A Post about Something', response.data)
-            self.assertTrue(current_user.name == "admin")
             self.assertTrue(current_user.is_active())
 
     # Ensure invalid form conveys errors
