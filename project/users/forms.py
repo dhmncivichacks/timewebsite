@@ -9,9 +9,13 @@ class LoginForm(Form):
 
 
 class RegisterForm(Form):
-    username = TextField(
-        'username',
-        validators=[DataRequired(), Length(min=3, max=25)]
+    name = TextField(
+        'name',
+        validators=[DataRequired(), Length(min=3, max=50)]
+    )
+    biography = TextField(
+        'biography',
+        validators=[DataRequired(), Length(min=1, max=256)]
     )
     url_handle = TextField(
         'url_handle',
