@@ -24,7 +24,6 @@ class TestEvents(BaseTestCase):
                 url_handle="an_event"
             ), follow_redirects=True)
             self.assertIn(b'An Event', response.data)
-            self.assertTrue(current_user.name == "admin")
             self.assertTrue(current_user.is_active())
 
     # Ensure invalid form conveys errors

@@ -1,9 +1,9 @@
 from flask_wtf import Form
-from wtforms import TextField
+from wtforms import StringField
 from wtforms.validators import DataRequired
 
 
 class OrganizationForm(Form):
-    name = TextField('Name', validators=[DataRequired()])
-    url_handle = TextField('Url handle', validators=[DataRequired()])
-    description = TextField('Description', validators=[DataRequired()])
+    name = StringField('Name', validators=[DataRequired()])
+    url_handle = StringField('Url handle', validators=[DataRequired()])
+    description = StringField('Description', validators=[DataRequired()])

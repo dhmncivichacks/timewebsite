@@ -31,7 +31,7 @@ def people():
                 name=form.name.data,
                 url_handle=form.url_handle.data,
                 biography=form.biography.data,
-                added_by_id=current_user.id
+                added_by_user_id=current_user.id
             )
             db.session.add(new_person)
             db.session.commit()

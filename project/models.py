@@ -67,13 +67,13 @@ class Person(db.Model):
     name = db.Column(db.String, nullable=False)
     url_handle = db.Column(db.String, nullable=False)
     biography = db.Column(db.String, nullable=False)
-    added_by_id = db.Column(db.Integer, ForeignKey('users.id'))
+    added_by_user_id = db.Column(db.Integer, ForeignKey('users.id'))
 
-    def __init__(self, name, url_handle, biography, added_by_id):
+    def __init__(self, name, url_handle, biography, added_by_user_id):
         self.name = name
         self.url_handle = url_handle
         self.biography = biography
-        self.added_by_id = added_by_id
+        self.added_by_user_id = added_by_user_id
 
 
 class Organization(db.Model):
@@ -133,14 +133,12 @@ class User(db.Model):
     __tablename__ = "users"
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String, nullable=False)
     email = db.Column(db.String, nullable=False)
     password = db.Column(db.String)
     posts = relationship("BlogPost", backref="author")
     url_handle = db.Column(db.String, nullable=False)
 
-    def __init__(self, name, email, password, url_handle):
-        self.name = name
+    def __init__(self, email, password, url_handle):
         self.email = email
         self.password = bcrypt.generate_password_hash(password)
         self.url_handle = url_handle

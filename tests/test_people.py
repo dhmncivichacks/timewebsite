@@ -19,7 +19,7 @@ class TestPeople(BaseTestCase):
             )
             response = self.client.post('/people', data=dict(
                 name='Somebody Somewhere', biography='The bio',
-                added_by_id=current_user.id, url_handle="somebody_somewhere"
+                added_by_user_id=current_user.id, url_handle="somebody_somewhere"
             ), follow_redirects=True)
             self.assertIn(b'Somebody Somewhere', response.data)
 
