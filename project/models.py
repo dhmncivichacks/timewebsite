@@ -67,13 +67,13 @@ class Person(db.Model):
     name = db.Column(db.String, nullable=False)
     url_handle = db.Column(db.String, nullable=False)
     biography = db.Column(db.String, nullable=False)
-    added_by_id = db.Column(db.Integer, ForeignKey('users.id'))
+    added_by_user_id = db.Column(db.Integer, ForeignKey('users.id'))
 
-    def __init__(self, name, url_handle, biography, added_by_id):
+    def __init__(self, name, url_handle, biography, added_by_user_id):
         self.name = name
         self.url_handle = url_handle
         self.biography = biography
-        self.added_by_id = added_by_id
+        self.added_by_user_id = added_by_user_id
 
 
 class Organization(db.Model):
