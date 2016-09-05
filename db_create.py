@@ -11,3 +11,7 @@ from project.models import User
 # create the database and the db tables
 db.create_all()
 db.session.commit()
+
+# initial user
+db.session.add(User(email="ad@min.com", password="admin", url_handle="admin"))
+db.session.commit()

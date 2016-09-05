@@ -8,9 +8,6 @@ from project.models import NewsItem
 from project.models import Sponsor
 from project.models import User
 
-# initial user for later foreign key use
-db.session.add(User(name="admin", email="ad@min.com", password="admin", url_handle="adminy"))
-db.session.commit()
 
 db.session.add(Blog("Foo Blarg of Blag Blog", url_handle="foo_blarg_of_blag_blog"))
 db.session.add(BlogPost("A Blog Post Title!", "Post body", author_id=1, url_handle="a_blog_post"))
