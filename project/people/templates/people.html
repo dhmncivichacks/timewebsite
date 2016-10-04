@@ -71,8 +71,8 @@
       <h1 class="post-title">
           {{ person.name }}
       </h1>
-      {{person.url_handle}}</br>
-      {{person.biography}}</br>
+      <p>{{person.biography}}</p>
+      <p><a class="btn btn-default" href="/{{person.url_handle}}" role="button">View details &raquo;</a></p>
     </div> <!-- person -->
     {% endfor %}
   </div> <!-- people -->

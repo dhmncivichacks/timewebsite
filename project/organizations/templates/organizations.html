@@ -71,8 +71,8 @@
       <h1 class="post-title">
           {{ organization.name }}
       </h1>
-      {{organization.description}}<br/>
-      {{organization.url_handle}}
+      <p>{{organization.description}}</p>
+      <p><a class="btn btn-default" href="/{{organization.url_handle}}" role="button">View details &raquo;</a></p>
     </div> <!-- organization -->
     {% endfor %}
   </div> <!-- organizations -->

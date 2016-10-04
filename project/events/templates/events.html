@@ -61,8 +61,8 @@
       <h1 class="post-title">
           {{ e.title }}
       </h1>
-      {{e.description}}<br/>
-      {{e.url_handle}}
+      <p>{{e.description}}</p>
+      <p><a class="btn btn-default" href="/{{e.url_handle}}" role="button">View details &raquo;</a></p>
     </div> <!-- post -->
     {% endfor %}
   </div> <!-- posts -->
