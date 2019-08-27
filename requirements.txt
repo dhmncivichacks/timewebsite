@@ -10,7 +10,7 @@ Flask-SQLAlchemy==1.0
 Flask-Testing==0.4.2
 Flask-WTF==0.10.2
 gunicorn==19.5.0
-httpie==0.9.3
+httpie==1.0.3
 itsdangerous==0.24
 Jinja2==2.7.3
 Mako==1.0.0
