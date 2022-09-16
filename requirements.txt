@@ -13,7 +13,7 @@ gunicorn==19.5.0
 httpie==1.0.3
 itsdangerous==0.24
 Jinja2==2.11.3
-Mako==1.0.0
+Mako==1.2.2
 MarkupSafe==0.23
 mccabe==0.4.0
 pep8==1.7.0
