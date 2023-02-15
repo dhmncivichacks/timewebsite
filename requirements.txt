@@ -23,6 +23,6 @@ pyflakes==1.0.0
 Pygments==2.7.4
 requests==2.20.0
 SQLAlchemy==1.3.0
-Werkzeug==0.15.3
+Werkzeug==2.2.3
 wheel==0.26.0
 WTForms==2.0.1
